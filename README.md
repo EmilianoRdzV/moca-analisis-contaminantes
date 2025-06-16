@@ -3,6 +3,7 @@
 ## Contexto del Proyecto
 
 Este repositorio contiene el desarrollo de un proyecto de ciencia de datos enfocado en el análisis de contaminantes atmosféricos.
+Este repositorio contiene el desarrollo de un proyecto realizado como parte del proceso de admisión para la **Maestría en Optimización y Cómputo Aplicado**.
 
 El trabajo se centra en un conjunto de datos que registra las concentraciones de seis contaminantes criterio durante el mes de enero de 2019. La implementación se realizó en un **Jupyter Notebook**, utilizando **Python** y un conjunto de librerías especializadas para el análisis de datos, incluyendo **Pandas, Matplotlib, Scikit-learn y Statsmodels**.
 
