@@ -26,5 +26,4 @@ El propósito de este proyecto es demostrar un flujo de trabajo de análisis de 
 
 * **/Notebooks/CalidadAire.ipynb**: El Jupyter Notebook principal que contiene todo el código, las visualizaciones y el análisis detallado del proyecto.
 * **/Data/contaminantes.xlsx**: El conjunto de datos original utilizado para el análisis.
-* **/I
-mages/**: Carpeta que contiene todas las gráficas generadas y guardadas durante el análisis (mapas de calor, diagramas de caja, gráficos de series de tiempo, etc.).
+* **/Images/**: Carpeta que contiene todas las gráficas generadas y guardadas durante el análisis (mapas de calor, diagramas de caja, gráficos de series de tiempo, etc.).
