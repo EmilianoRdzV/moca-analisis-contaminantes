@@ -29,7 +29,8 @@ from statsmodels.tsa.seasonal import seasonal_decompose
 # 
 # Este notebook realiza un análisis multifacético sobre un conjunto de datos de seis contaminantes criterio, correspondientes al mes de enero de 2019. El proyecto se centra en dos áreas principales de la ciencia de datos:
 # 
-# 1.  **Modelado Predictivo:** Se construirán y evaluarán modelos de regresión para estimar la concentración de ciertos contaminantes (como PM2.5 y O3) utilizando otros gases como variables de entrada.
+# 1.  **Modelado Predictivo e Inferencia Estadística:** Se construirán y evaluarán modelos de **regresión lineal múltiple** para estimar la concentración de ciertos contaminantes (como PM2.5 y O3). Más allá de la predicción, se aplicarán técnicas de inferencia para validar los modelos. Gracias a los fundamentos de materias como **Econometría** que curse dentro de mi Licenciatura en Economía, se realizará la elaboración e interpretación de los resultados estadísticos, analizando la significancia de cada variable a través de sus **valores-t** y p-values.
+# 
 # 2.  **Análisis de Series de Tiempo:** Se analizará el comportamiento temporal de un contaminante específico para descomponer su serie, identificar su tendencia y observar los patrones subyacentes una vez eliminado el componente estacional.
 # 
 # ---
@@ -509,6 +510,43 @@ plt.savefig('../Images/averageDia.png', dpi=300, bbox_inches='tight')
 
 
 plt.show()
+
+
+# ## <a id="fase-4"></a>4. Fase 4: Conclusiones Finales
+# 
+# En esta sección final, se resumen los hallazgos clave obtenidos a lo largo de las tres fases de análisis y se proponen posibles líneas de trabajo futuro para expandir este proyecto.
+# 
+# ### <a id="4-1"></a>4.1. Resumen de Hallazgos
+# 
+# ### Análisis Combinado de los Patrones Temporales
+# 
+# Al analizar conjuntamente el gráfico de promedios por día y la evolución de la serie temporal, podemos extraer las siguientes conclusiones clave sobre el comportamiento de los contaminantes en Enero de 2019.
+# 
+# #### 1. Patrones por Día de la Semana (Análisis del Gráfico de Barras)
+# 
+# * **`NO2` y `CO`:** Ambos contaminantes exhiben un claro **"patrón laboral"**. Sus concentraciones son más altas al inicio de la semana (con un pico el **lunes**) y disminuyen gradualmente hacia el fin de semana, registrando sus niveles más bajos el domingo. Esto sugiere fuertemente que su principal fuente es el **tráfico vehicular** y la actividad industrial.
+# 
+# * **`PM2.5`:** Este contaminante presenta un comportamiento más complejo. Los picos de concentración promedio ocurren en los extremos de la semana: **lunes y domingo**. Esto indica que, además del tráfico, otros factores influyen en el PM2.5, como posibles actividades recreativas o domésticas de fin de semana, o condiciones atmosféricas que favorecen la acumulación de partículas.
+# 
+# #### 2. Frecuencia y Duración de los Episodios (Análisis del Gráfico de Líneas)
+# 
+# * **La gráfica de la serie desestacionalizada** (la línea naranja) es crucial, ya que al eliminar el "ruido" de los ciclos diarios, revela la verdadera tendencia subyacente.
+# 
+# * En esta tendencia, podemos identificar claramente **4 o 5 episodios principales** de contaminación a lo largo del mes. Esto demuestra que los periodos de alta contaminación no son eventos aislados de un solo día, sino que tienden a **durar varios días consecutivos** antes de que las condiciones mejoren.
+# 
+# #### Conclusión General
+# 
+# La contaminación por gases como el `NO2` y `CO` está fuertemente ligada al ritmo de la semana laboral. Sin embargo, los episodios más severos de contaminación por partículas (`PM2.5`) son un fenómeno de varios días, con picos importantes tanto al inicio de la semana como durante el fin de semana, probablemente por una combinación de emisiones continuas y condiciones meteorológicas que impiden su dispersión.
+
+# ---
+
+# Emiliano Rodriguez Villegas
+# 
+# Por ultimo convertimos el notebook a un script .py con la finalidad de portabilidad y facilidad para compartir, mayor limpieza en el codigo y el versionamiento de el
+# 
+
+
+
 
 
 # 

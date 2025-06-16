@@ -7521,14 +7521,16 @@ a.anchor-link {
 <a href="https://scikit-learn.org/stable/"><img alt="Scikit-learn" src="https://img.shields.io/badge/Scikit--learn-1.2+-1560BD.svg"/></a>
 <a href="https://www.statsmodels.org/stable/index.html"><img alt="Statsmodels" src="https://img.shields.io/badge/Statsmodels-0.14+-8A2BE2.svg"/></a>
 <a href="https://www.python.org/downloads/release/python-390/"><img alt="Python 3.9+" src="https://img.shields.io/badge/Python-3.9+-green.svg"/></a></p>
-<h1 id="Proyecto:-An%C3%A1lisis-Predictivo-y-de-Series-de-Tiempo-de-Contaminantes-Atmosf%C3%A9ricos">Proyecto: Análisis Predictivo y de Series de Tiempo de Contaminantes Atmosféricos<a class="anchor-link" href="#Proyecto:-An%C3%A1lisis-Predictivo-y-de-Series-de-Tiempo-de-Contaminantes-Atmosf%C3%A9ricos">¶</a></h1><p><strong>Autor:</strong> <a href="https://github.com/EmilianoRdzV">Emiliano Rodriguez Villegas</a>
+<h1 id="Proyecto:-An%C3%A1lisis-Estad%C3%ADstico-y-de-Series-de-Tiempo-de-Contaminantes-Atmosf%C3%A9ricos">Proyecto: Análisis Estadístico y de Series de Tiempo de Contaminantes Atmosféricos<a class="anchor-link" href="#Proyecto:-An%C3%A1lisis-Estad%C3%ADstico-y-de-Series-de-Tiempo-de-Contaminantes-Atmosf%C3%A9ricos">¶</a></h1><p><strong>Autor:</strong> <a href="https://github.com/EmilianoRdzV">Emiliano Rodriguez Villegas</a>
 <strong>Fecha:</strong> 14 de Junio de 2025
 <strong>Versión:</strong> 1.0</p>
 <hr/>
 <h2 id="Introducci%C3%B3n-y-Objetivos">Introducción y Objetivos<a class="anchor-link" href="#Introducci%C3%B3n-y-Objetivos">¶</a></h2><p>Este notebook realiza un análisis multifacético sobre un conjunto de datos de seis contaminantes criterio, correspondientes al mes de enero de 2019. El proyecto se centra en dos áreas principales de la ciencia de datos:</p>
 <ol>
-<li><strong>Modelado Predictivo:</strong> Se construirán y evaluarán modelos de regresión para estimar la concentración de ciertos contaminantes (como PM2.5 y O3) utilizando otros gases como variables de entrada.</li>
-<li><strong>Análisis de Series de Tiempo:</strong> Se analizará el comportamiento temporal de un contaminante específico para descomponer su serie, identificar su tendencia y observar los patrones subyacentes una vez eliminado el componente estacional.</li>
+<li><p><strong>Modelado Predictivo e Inferencia Estadística:</strong> Se construirán y evaluarán modelos de <strong>regresión lineal múltiple</strong> para estimar la concentración de ciertos contaminantes (como PM2.5 y O3). Más allá de la predicción, se aplicarán técnicas de inferencia para validar los modelos. Gracias a los fundamentos de materias como <strong>Econometría</strong> que curse dentro de mi Licenciatura en Economía, se realizará la elaboración e interpretación de los resultados estadísticos, analizando la significancia de cada variable a través de sus <strong>valores-t</strong> y p-values.</p>
+</li>
+<li><p><strong>Análisis de Series de Tiempo:</strong> Se analizará el comportamiento temporal de un contaminante específico para descomponer su serie, identificar su tendencia y observar los patrones subyacentes una vez eliminado el componente estacional.</p>
+</li>
 </ol>
 <hr/>
 <h3 id="%C3%8Dndice-del-Notebook">Índice del Notebook<a class="anchor-link" href="#%C3%8Dndice-del-Notebook">¶</a></h3><ol>
@@ -7581,7 +7583,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [48]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [72]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -7726,7 +7728,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [49]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [73]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Valores nulos/duplicados que puedan interferir en el analisiss </span>
@@ -7784,7 +7786,7 @@ memory usage: 40.6 KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [50]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [74]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># .describe() nos da un resumen numérico completo de cada columna.</span>
@@ -7941,7 +7943,7 @@ memory usage: 40.6 KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [51]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [75]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Matriz de Correlación y Heatmap</span>
@@ -8010,7 +8012,7 @@ memory usage: 40.6 KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [52]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [64]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Regresión Lineal Simple: PM10 -&gt; PM2.5</span>
@@ -8096,7 +8098,7 @@ memory usage: 40.6 KB
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [53]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [65]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Regresión Lineal Múltiple: (NO2, CO) -&gt; O3 </span>
@@ -8213,7 +8215,7 @@ Coeficiente de Determinación (R²): 0.2345
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [54]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [66]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Statsmodels requiere que añadamos una constante (el intercepto) a nuestras variables X.</span>
@@ -8245,7 +8247,7 @@ Dep. Variable:                     O3   R-squared:                       0.314
 Model:                            OLS   Adj. R-squared:                  0.311
 Method:                 Least Squares   F-statistic:                     118.1
 Date:                Mon, 16 Jun 2025   Prob (F-statistic):           6.05e-43
-Time:                        16:36:27   Log-Likelihood:                 1542.9
+Time:                        17:14:29   Log-Likelihood:                 1542.9
 No. Observations:                 519   AIC:                            -3080.
 Df Residuals:                     516   BIC:                            -3067.
 Df Model:                           2                                         
@@ -8333,7 +8335,7 @@ Notes:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [55]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [67]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Gráfico de línea para PM2.5</span>
@@ -8393,7 +8395,7 @@ Notes:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [56]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [68]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Descomposición de la Serie de Tiempo de PM2.5 (con Eje X numérico)</span>
@@ -8481,7 +8483,7 @@ Notes:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [57]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [69]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Serie Desestacionalizada</span>
@@ -8568,7 +8570,7 @@ Notes:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [58]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [70]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Análisis por Día de la Semana </span>
@@ -8747,7 +8749,7 @@ Notes:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Emiliano Rodrigyez Villegas</p>
+<p>Emiliano Rodriguez Villegas</p>
 <p>Por ultimo convertimos el notebook a un script .py con la finalidad de portabilidad y facilidad para compartir, mayor limpieza en el codigo y el versionamiento de el</p>
 </div>
 </div>
@@ -8757,7 +8759,7 @@ Notes:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [59]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [71]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="w"> </span>python<span class="w"> </span>../convertidor.py<span class="w"> </span>--input<span class="w"> </span>../Notebooks/CalidadAire.ipynb<span class="w"> </span>--output<span class="w"> </span>CalidadAire.py
@@ -8774,7 +8776,7 @@ Notes:
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
 <pre>[NbConvertApp] Converting notebook ../Notebooks/CalidadAire.ipynb to script
-[NbConvertApp] Writing 25649 bytes to ..\Notebooks\CalidadAire.py
+[NbConvertApp] Writing 28764 bytes to ..\Notebooks\CalidadAire.py
 </pre>
 </div>
 </div>
