@@ -1,4 +1,4 @@
-# Proyecto de Análisis de Datos: Predicción y Series de Tiempo de Contaminantes Atmosféricos
+# Proyecto: Análisis Estadístico y de Series de Tiempo de Contaminantes Atmosféricos
 
 ## Contexto del Proyecto
 
